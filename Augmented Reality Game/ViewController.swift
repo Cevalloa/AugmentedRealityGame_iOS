@@ -11,19 +11,22 @@ import ARKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var sceneView: SCNView!
+    @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var counterLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let scene = SCNScene()
+        sceneView.scene = scene
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let configuration = ARWorldTrackingConfiguration() // Tracks device orientation and positioning
+        
+        sceneView.session.run(configuration)
     }
-
-
 }
 
