@@ -14,6 +14,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var counterLabel: UILabel!
     
+    var counter: Int = 0 {
+        didSet {
+            counterLabel.text = "\(counter)"
+        }
+    }
+    
     // MARK: View Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +38,7 @@ class ViewController: UIViewController {
         addObject()
     }
     
-    // MARK: AR Kid Methods
+    // MARK: AR Kit Methods
     func addObject() {
         
         let ship = SpaceShip()
@@ -46,6 +52,29 @@ class ViewController: UIViewController {
         sceneView.scene.rootNode.addChildNode(ship)
     }
     
+    // MARK: Touch Methods
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        if let touch = touches.first {
+            
+            let location = touch.location(in: sceneView)
+            
+            let hitList = sceneView.hitTest(location, options: nil)
+            
+            if let hitObject = hitList.first {
+                
+                let node = hitObject.node
+                
+                    if node.name == "ARShip" {
+                        
+                        counter += 1
+                        node.removeFromParentNode()
+                        addObject()
+                    }
+                }
+            }
+        }
+
     // MARK: Helper Methods
     func randomPosition(lowerBound lower:Float, upperBound upper:Float) -> Float {
         
