@@ -22,6 +22,7 @@
 		6C4008551F875C9D0013FA2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6C4008581F875C9D0013FA2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C40085A1F875C9D0013FA2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C4008601F8864060013FA2C /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +60,7 @@
 				6C4008521F875C9D0013FA2C /* Main.storyboard */,
 				6C4008551F875C9D0013FA2C /* Assets.xcassets */,
 				6C4008571F875C9D0013FA2C /* LaunchScreen.storyboard */,
+				6C4008601F8864060013FA2C /* art.scnassets */,
 				6C40085A1F875C9D0013FA2C /* Info.plist */,
 			);
 			path = "Augmented Reality Game";
